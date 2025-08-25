@@ -13,6 +13,13 @@ function getvalue(id){
 
 }
 
+// function  to get innertext 
+
+    function name(params) {
+        
+    }
+
+
 
 
 
@@ -66,18 +73,83 @@ document.getElementById('add_money_btn').addEventListener('click',function(e){
 
 // toggoling feature 
 
-document.getElementById('add-button').addEventListener('click',function(){ 
+// add button 
 
-    document.getElementById('cash-out-parent').style.display ="none" ;
-    document.getElementById('add-money-parent').style.display="block";
+// function handle toggle 
+
+function handleToggle(id){ 
+
+     const forms = document.getElementsByClassName('formClass')
+    
+     for(const form of  forms){ 
+         form.style.display = 'none'
+
+     }
+     document.getElementById(id).style.display = "block";
+
+}
+
+
+
+document.getElementById('add-button').addEventListener('click',function(){ 
+     
+     
+    const forms = document.getElementsByClassName('formClass')
+
+    const formBtns =document.getElementsByClassName('formButtonClass');
+     
+
+    for(const btn of formBtns){
+         btn.classList.remove("border-[#0874f2]", "bg-[#0874f2]/5");
+          
+         btn.classList.add("border-gray-300");
+    }
+
+
+
+    
+     for(const form of  forms){ 
+         form.style.display = 'none'
+         
+
+
+     }
+     document.getElementById('add-money-parent').style.display = "block";
+
+     
+          document.getElementById("add-button").classList.remove("border-gray-300");
+
+     document.getElementById("add-button").classList.add("border-[#0874f2]", "bg-[#0874f2]/5");
+
+
+
 });
+
+
+// cash out button 
+
+
+// NOTE: usinge handle toggle function to make easy and short 
 
 
 document.getElementById('cash-out-button').addEventListener('click',function(){ 
 
-    document.getElementById('add-money-parent').style.display ="none" ;
-    document.getElementById('cash-out-parent').style.display="block";
+     handleToggle('cash-out-parent');
+    
 });
+// transfer money  
+
+document.getElementById('transfer_money_button').addEventListener('click',function(){ 
+
+  document.getElementById('add-money-parent').style.display ="none" ;
+    document.getElementById('cash-out-parent').style.display="none";
+
+    document.getElementById('transfer_money_parent').style.display="block"
+
+
+});
+
+
 
 
 
