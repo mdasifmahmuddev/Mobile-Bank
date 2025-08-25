@@ -25,7 +25,7 @@
  <div class="flex   items-center   ">
    <img src="./assets/Group.png " class="h-[50px]" alt="">
   <div class="ml-2">
-    <h1 class="font-bold  ">$<span>455454</span></h1>
+    <h1 class="font-bold  ">$<span id="available_balance">100</span></h1>
     
     <p class="mt-2 text-[#08080880]">Available Balance</p>
   </div>
@@ -61,13 +61,13 @@
   
   <div class="card-section grid grid-cols-3 gap-4  rounded-b-xl">
 
-    <div class=" border-1 border-gray-300  text-center p-3 ">
+    <div  id="add-button" class=" border-1 border-gray-300  text-center p-3 ">
       <img src="./assets/wallet1.png" class="mx-auto " alt="">
       <h2>Add Money</h2>
     </div>
 
     
-     <div class=" border-1 border-gray-300  text-center p-3 ">
+     <div  id="cash-out-button" class=" border-1 border-gray-300  text-center p-3 ">
       <img src="./assets/wallet1.png" class="mx-auto  " alt="">
       <h2>Cashout</h2>
     </div>
@@ -99,15 +99,19 @@
 </div>
 
 <!-- form  -->
- <div class="mx-auto max-w-lg pt-5 font-bold items-center  "> <h1 > Add Money </h1></div>
+
 <div class="form   bg-white rounded-lg   min-h-[400px] mx-auto max-w-lg mt-2 p-1 ">
 
+  <!-- add money  -->
 
- <div class="p-4">
+ <div  id="add-money-parent"   class="p-4">
+
+   <div  class="mx-auto max-w-lg pt-5 font-bold items-center mb-3 "> <h1 > Add Money </h1></div>
+
 
   <div  >
     <h2 class="mb-2 font-semibold rounded-4xl ">Select A Bank</h2>
-   <select class="select rounded-3xl w-full">
+   <select id="bank" class="select rounded-3xl w-full">
   <option disabled selected>Select A Bank</option>
   <option>Brac</option>
   <option>NRB</option>
@@ -118,36 +122,67 @@
   
   <div >
     <h2 class="mb-2 font-semibold ">Bank Account Number</h2>
-    <input  type="text"  placeholder="Enter Bank Account Number" class="input rounded-3xl  w-full" disabled />
+    <input  type="text" id="bank_number" placeholder="Enter Bank Account Number" class="input rounded-3xl  w-full"  />
 
   </div>
   <div >
     <h2 class="mb-2 font-semibold">Amount To Add</h2>
-    <input type="text  " placeholder="Add Amount To Withdraw" class="input rounded-3xl w-full" disabled />
+    <input type="text  " id="amount_add" placeholder="Add Amount To Withdraw" class="input rounded-3xl w-full"   />
 
   </div>
    <div >
     <h2 class="mb-2 font-semibold">Pin Number</h2>
-    <input type="text  " placeholder="Pin Number" class="input rounded-3xl w-full" disabled />
+    <input type="text  " id="pin_number" placeholder="Pin Number" class="input rounded-3xl w-full"   />
+
+
+    
+ </div>
+
+ <button id="add_money_btn" class="btn btn-info min-w-full mt-3 rounded-3xl bg-[#0874F2] text-white font-bold">Add Money</button>
+</div>
+
+<!-- cash out  -->
+ <div  class="hidden" id="cash-out-parent"> 
+   <div style="display: none;" class="mx-auto max-w-lg pt-5 font-bold items-center mb-3  "  > <h1 >  Cash Out </h1></div>
+
+   
+  <div >
+    <h2 class="mb-2 font-semibold ">Agent Number</h2>
+    <input   type="text" id="agent-number-id" placeholder="Enter 11 Digits Number" class="input rounded-3xl  w-full"  />
 
   </div>
-  
+  <div >
+    <h2 class="mb-2 font-semibold ">Amount</h2>
+    <input  type="text" id="amount-id" placeholder="Enter Amount To Withdraw" class="input rounded-3xl  w-full"  />
+
+  </div>
+
+  <div >
+    <h2 class="mb-2 font-semibold ">Pin Number</h2>
+    <input  type="text" id="pin-id" placeholder="Enter Pin Number" class="input rounded-3xl  w-full"  />
+
+  </div>
+
+  <button id="cash-out-submit-button" class="btn btn-info min-w-full mt-3 rounded-3xl bg-[#0874F2] text-white font-bold">Cash Out</button>
+</div>
 
 
 
  </div>
 
 
- <button class="btn btn-info min-w-full rounded-3xl bg-[#0874F2] text-white font-bold">Add Money</button>
 
 
-
-</div  >
+  </div>
   
 
 
 
-    
+  
+
+
+
+    <script src="./home.js"></script>
     
 </body>
 </html>
